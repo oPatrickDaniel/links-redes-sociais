@@ -8,6 +8,7 @@
     --white: #ffffff;
     --grey: #919193;
     --gradiente: linear-gradient(to left, #40a376, #5578ba);
+    --margin_default: 1rem;
 }
 
 /* resetting css */
@@ -15,6 +16,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
 }
 
 /* body */
@@ -24,40 +30,41 @@ body {
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 .container {
-    max-width: 500px;
-    display: relative;
-    margin: 0 auto;
-    padding: 100px;
+    max-width: 540px;
+    margin: auto;
+    padding: 20px;
+    color: var(--white);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* header */
-
-header {
-    display: flex;
-    flex-direction: column;
-}
 
 header .photo {
     width: 100px;
 }
 
-.photo img {
+header .photo img {
     width: 100%;
     background-image: var(--gradiente);
     border-radius: 50%;
 }
 
 header h1 {
-    color: var(--white);
-    font-weight: 400;
+    margin-top: var(--margin_default);
+    font-size: 2em;
+    font-weight: 500;
 }
 
 header p {
     color: var(--grey);
-    margin-top: 10px;
+    margin: var(--margin_default) 0;
 }
 
 /* main */
@@ -65,37 +72,48 @@ header p {
 main {
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
 main li {
+    background-image: var(--gradiente);
     list-style: none;
-    margin-top: 1em;
+    height: 4em;
+    border-radius: 2em;
 }
 
 main li a {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-image: var(--gradiente);
-    border-radius: 50px;
-    color: var(--white);
+    padding: 1em 2em;
     text-decoration: none;
-    padding: 1em 30px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 main li a img {
-    width: 20px;
+    width: 1.2em;
 }
 
 /* footer */
 
 footer {
+    margin: var(--margin_default) 0;
     display: flex;
-    flex-direction: row;
-    margin: 1em 10px;
-    column-gap: 1.3em;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+footer a {
+    background-image: var(--gradiente);
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 
 footer a img {
-    width: 20px;
+    width: 1.2em;
 }
